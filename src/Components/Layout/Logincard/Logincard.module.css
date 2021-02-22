@@ -1,0 +1,13 @@
+.Login{
+    width: 500px;
+    height: 100px;
+    padding-top: 200px;
+    padding-left: 200px;
+}
+@media(max-width:500px){
+    .Login{
+        padding-left:50px;
+        width: 300px;
+        padding-top: 100px;
+    }
+}

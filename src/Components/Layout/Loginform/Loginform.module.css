@@ -1,0 +1,16 @@
+.Loginform {
+    width: 400px;
+    height: 300px;
+    
+}
+@media (max-width:500px){
+ .Loginform{
+     width: 200px;
+     height: fit-content;
+ }
+}
+.Buttons{
+    color: white;
+    text-decoration: none;
+
+}

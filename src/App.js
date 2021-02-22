@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Layout from "./Components/Layout/Layout";
+import React from "react";
+import classes from "./App.module.css";
+import Logincard from "./Components/Layout/Logincard/Logincard";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import Hotelmenu from "./Containers/Hotelmenu/Hotelmenu";
+class App extends React.Component {
+  state = {
+    islog: false,
+    customername: "",
+    phonenumber: "",
+    count: "",
+    veg: false,
+    Novveg: false,
+  };
+  LoginHandler = (e) => {
+    this.setState({
+      islog: e.login,
+      customername: e.customername,
+      phonenumber: e.phonenumber,
+      count: e.count,
+      veg: e.veg,
+      Novveg: e.Novveg,
+    });
+  };
+  render() {
+    let islog = this.state.islog;
+    console.log(this.state);
+    return (
+      <div className={classes.App}>
+        <Layout customername={this.state.customername} />
+        <Router>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() =>
+                !islog ? (
+                  <Logincard islog={this.LoginHandler} />
+                ) : (
+                  <Hotelmenu customername={this.state.customername} />
+                )
+              }
+            />
+            <Link exact to="/weather" component={Hotelmenu} />
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;

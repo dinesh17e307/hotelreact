@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import classes from "./Buttons.module.css";
 import Routing from "../../Routing/Routing";
 const Buttons = (props) => (
-  <div>
+  <div className={classes.Buttons}>
     <Link to={"/" + props.children}>
       {" "}
       <Button variant="contained" color="secondary">

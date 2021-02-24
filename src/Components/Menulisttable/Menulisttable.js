@@ -8,23 +8,44 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import classes from "./Menulisttable.module.css";
 import Buttons from "../Layout/Button/Buttons";
+import Buttontable from "../Layout/Buttontable/Buttontable";
+import Buttonless from "../Layout/Buttontable/Buttonless";
 const Menulisttable = (props) => {
-  console.log(props.data);
   return (
     <div>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableBody>
-            {props.data.map((item) => {
+            {Object.keys(props.data).map((item) => {
               return (
                 <TableRow key={item}>
                   <TableCell component="th" scope="row">
                     {item}
                   </TableCell>
-                  <TableCell align="left">{<Buttons>add</Buttons>}</TableCell>
-                  <TableCell align="left">{<Buttons>add</Buttons>}</TableCell>
+                  <TableCell align="left">
+                    {
+                      <Buttontable
+                        add={props.add}
+                        cost={props.data[item]}
+                        item={item}
+                      >
+                        add
+                      </Buttontable>
+                    }
+                  </TableCell>
+                  <TableCell align="left">
+                    {
+                      <Buttonless
+                        less={props.less}
+                        item={item}
+                        cost={props.data[item]}
+                      >
+                        less
+                      </Buttonless>
+                    }
+                  </TableCell>
                   <TableCell align="left">{1}</TableCell>
-                  <TableCell align="left">{50}</TableCell>
+                  <TableCell align="left">{props.data[item]}</TableCell>
                 </TableRow>
               );
             })}

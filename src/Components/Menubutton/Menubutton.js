@@ -15,6 +15,7 @@ import Freshjuice from "../Sections/Freshjuice";
 import Sweets from "../Sections/Sweets";
 import Routing from "../Routing/Routing";
 import Menulisttable from "../Menulisttable/Menulisttable";
+import Listmenu from "../Layout/LIstmenu/Listmenu";
 const items = [
   "southindian",
   "northindian",
@@ -24,9 +25,17 @@ const items = [
   "icecreams",
   "sweets",
 ];
+let arr = [];
 export class Menubutton extends Component {
   state = {
+    order: [],
     routepath: "",
+  };
+  additemhandler = (e) => {
+    arr.push(e);
+    this.setState({
+      order: arr,
+    });
   };
   routehandler = (e) => {
     this.setState({
@@ -43,6 +52,7 @@ export class Menubutton extends Component {
         <section>
           <Toolbar className={classes.Header}>{item}</Toolbar>
         </section>
+
         <div className={classes.Menubutton}>
           <Switch>
             <Route exact path="/southindian" component={Southindian} />

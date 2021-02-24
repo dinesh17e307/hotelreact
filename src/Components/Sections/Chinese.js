@@ -1,13 +1,13 @@
 import React from "react";
 import Menulisttable from "../Menulisttable/Menulisttable";
-const rows = [
-  "Noodles",
-  "egg noodles",
-  "french fries",
-  "china plates",
-  "mutton china",
-  "flower china",
-];
+const rows = {
+  chiecken: 50,
+  Mutton: 100,
+  berry: 150,
+  chilly: 200,
+  mutton: 300,
+  flower: 200,
+};
 const Chinese = () => {
   return (
     <div>

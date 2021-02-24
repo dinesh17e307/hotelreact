@@ -4,10 +4,10 @@
     height: 300px;
     margin-left: 300px;
     margin-top: 80px;
-
 }
 @media(max-width:500px){
     .Listmenu{
-        margin-left: 70px;
+        margin-left: 40px;
+        width: calc(70% - 250px);
     }
 }

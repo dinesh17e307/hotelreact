@@ -14,6 +14,7 @@ import Icecreams from "../Sections/Icecreams";
 import Freshjuice from "../Sections/Freshjuice";
 import Sweets from "../Sections/Sweets";
 import Routing from "../Routing/Routing";
+import Menulisttable from "../Menulisttable/Menulisttable";
 const items = [
   "southindian",
   "northindian",
@@ -24,13 +25,35 @@ const items = [
   "sweets",
 ];
 export class Menubutton extends Component {
+  state = {
+    routepath: "",
+  };
+  routehandler = (e) => {
+    this.setState({
+      routepath: e,
+    });
+  };
   render() {
+    console.log(this.state);
     let item = items.map((e) => {
-      return <Buttons>{e}</Buttons>;
+      return <Buttons click={this.routehandler}>{e}</Buttons>;
     });
     return (
-      <div className={classes.Menubutton}>
-        <Toolbar className={classes.Header}>{item}</Toolbar>
+      <div>
+        <section>
+          <Toolbar className={classes.Header}>{item}</Toolbar>
+        </section>
+        <div className={classes.Menubutton}>
+          <Switch>
+            <Route exact path="/southindian" component={Southindian} />
+            <Route exact path="/northindian" component={Northindian} />
+            <Route path="/chinese" component={Chinese} />
+            <Route path="/tandhoori" component={Thandhoori} />
+            <Route path="/freshjuice" component={Freshjuice} />
+            <Route path="/icecreams" component={Icecreams} />
+            <Route path="/sweets" component={Sweets} />
+          </Switch>
+        </div>
       </div>
     );
   }

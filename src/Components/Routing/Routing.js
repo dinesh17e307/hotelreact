@@ -7,7 +7,7 @@ import Thandhoori from "../Sections/Thandhoori";
 import Icecreams from "../Sections/Icecreams";
 import Freshjuice from "../Sections/Freshjuice";
 import Sweets from "../Sections/Sweets";
-const Routing = () => {
+const Routing = (props) => {
   return (
     <div>
       <Router>
@@ -40,13 +40,7 @@ const Routing = () => {
             {" "}
             <Sweets />
           </Route>
-          <Link to="/southindian">si</Link>
-          <Link to="/northindian">ni </Link>
-          <Link to="/chinese">c</Link>
-          <Link to="/thandhoori">t</Link>
-          <Link to="/freshjuice">fr</Link>
-          <Link to="/icecreams">ice</Link>
-          <Link to="/sweets">swe</Link>
+          <Link to={`/${props.pat}`}></Link>
         </Switch>
       </Router>
     </div>

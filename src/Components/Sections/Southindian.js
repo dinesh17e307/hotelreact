@@ -1,11 +1,13 @@
 import React from "react";
-
-function Southindian() {
-  return (
-    <div>
-      <h1>south indian</h1>
-    </div>
-  );
+import Menulisttable from "../Menulisttable/Menulisttable";
+const rows = ["chiecken", "Mutton", "berry", "chilly", "mutton", "flower"];
+class Southindian extends React.Component {
+  render() {
+    return (
+      <div>
+        <Menulisttable data={rows} />
+      </div>
+    );
+  }
 }
-
 export default Southindian;

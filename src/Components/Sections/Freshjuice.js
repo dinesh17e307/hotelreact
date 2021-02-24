@@ -1,9 +1,10 @@
 import React from "react";
-
+import Menulisttable from "../Menulisttable/Menulisttable";
+const rows = ["chiecken", "Mutton", "berry", "chilly", "mutton", "flower"];
 function Freshjuice() {
   return (
     <div>
-      <h1>fresh juice</h1>
+      <Menulisttable data={rows} />
     </div>
   );
 }

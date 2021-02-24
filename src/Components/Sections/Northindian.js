@@ -1,9 +1,10 @@
 import React from "react";
-
+import Menulisttable from "../Menulisttable/Menulisttable";
+const rows = ["chiecken", "Mutton", "berry", "chilly", "mutton", "flower"];
 function Northindian() {
   return (
     <div>
-      <h1>North indian</h1>
+      <Menulisttable data={rows} />
     </div>
   );
 }

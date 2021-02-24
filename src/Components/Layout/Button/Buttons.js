@@ -5,13 +5,12 @@ import classes from "./Buttons.module.css";
 import Routing from "../../Routing/Routing";
 const Buttons = (props) => (
   <div>
-    <Button
-      variant="contained"
-      color="secondary"
-      onClick={<Routing to={props.children} />}
-    >
-      {props.children}
-    </Button>
+    <Link to={"/" + props.children}>
+      {" "}
+      <Button variant="contained" color="secondary">
+        {props.children}
+      </Button>
+    </Link>
   </div>
 );
 export default Buttons;

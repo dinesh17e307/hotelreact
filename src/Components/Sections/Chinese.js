@@ -1,11 +1,19 @@
 import React from "react";
-
-function chinese() {
+import Menulisttable from "../Menulisttable/Menulisttable";
+const rows = [
+  "Noodles",
+  "egg noodles",
+  "french fries",
+  "china plates",
+  "mutton china",
+  "flower china",
+];
+const Chinese = () => {
   return (
     <div>
-      <h1>chinese</h1>
+      <Menulisttable data={rows} />
     </div>
   );
-}
+};
 
-export default chinese;
+export default Chinese;

@@ -45,7 +45,11 @@ export class Menubutton extends Component {
   render() {
     console.log(this.state);
     let item = items.map((e) => {
-      return <Buttons click={this.routehandler}>{e}</Buttons>;
+      return (
+        <Buttons click={this.routehandler} key={e.concat(Math.random())}>
+          {e}
+        </Buttons>
+      );
     });
     return (
       <div>

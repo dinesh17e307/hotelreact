@@ -1,22 +1,26 @@
 import React from "react";
 import Menulisttable from "../Menulisttable/Menulisttable";
 const INGREDIENTCOST = {
-  chicken: 50,
-  mutton: 100,
-  berry: 150,
-  chilly: 200,
-  muttons: 300,
-  flower: 200,
+  Biryani: 50,
+  Khichdi: 100,
+  buttermasala: 150,
+  Idiappam: 200,
+  Keerai: 300,
+  Kothamali: 200,
+  Pongal: 200,
+  Ragimudhe: 200,
 };
 class Southindian extends React.Component {
   state = {
     ingredient: {
-      chicken: 0,
-      mutton: 0,
-      berry: 0,
-      chilly: 0,
-      muttons: 0,
-      flower: 0,
+      Biryani: 0,
+      Khichdi: 0,
+      buttermasala: 0,
+      Idiappam: 0,
+      Keerai: 0,
+      Kothamali: 0,
+      Pongal: 0,
+      Ragimudhe: 0,
     },
     totalprice: 0,
   };

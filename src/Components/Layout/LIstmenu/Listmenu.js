@@ -11,7 +11,7 @@ class Listmenu extends Component {
   };
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Card className={classes.Listmenu} variant="outlined">
           <CardContent>
             <h3>Welcome to A2B ,Taste your desire</h3>
@@ -25,7 +25,7 @@ class Listmenu extends Component {
             <Button size="small">Learn More</Button>
           </CardActions>
         </Card>
-      </div>
+      </React.Fragment>
     );
   }
 }

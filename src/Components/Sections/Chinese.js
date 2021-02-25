@@ -1,17 +1,29 @@
 import React from "react";
 import Menulisttable from "../Menulisttable/Menulisttable";
 const rows = {
-  chiecken: 50,
-  Mutton: 100,
-  berry: 150,
-  chilly: 200,
-  mutton: 300,
-  flower: 200,
+  SpringRolls: 150,
+  DimSums: 300,
+  FriedTofu: 250,
+  Chestnuts: 290,
+  ChickenSatay: 300,
+  VegHakka: 250,
+  GarlicSoya: 350,
+  "": 0,
+};
+const ingredient = {
+  SpringRolls: 0,
+  DimSums: 0,
+  FriedTofu: 0,
+  Chestnuts: 0,
+  ChickenSatay: 0,
+  VegHakka: 0,
+  GarlicSoya: 0,
+  "": 0,
 };
 const Chinese = () => {
   return (
     <div>
-      <Menulisttable data={rows} />
+      <Menulisttable data={rows} dish={ingredient} />
     </div>
   );
 };

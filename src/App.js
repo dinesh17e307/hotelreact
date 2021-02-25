@@ -4,6 +4,7 @@ import classes from "./App.module.css";
 import Logincard from "./Components/Layout/Logincard/Logincard";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Hotelmenu from "./Containers/Hotelmenu/Hotelmenu";
+import Backgroundslider from "./Components/Layout/Backgroundslider/Backgroundslider";
 class App extends React.Component {
   state = {
     islog: false,
@@ -28,6 +29,7 @@ class App extends React.Component {
     console.log(this.state);
     return (
       <div className={classes.App}>
+        <Backgroundslider />
         <Layout customername={this.state.customername} />
         <Router>
           <Switch>

@@ -16,6 +16,12 @@ import Sweets from "../Sections/Sweets";
 import Routing from "../Routing/Routing";
 import Menulisttable from "../Menulisttable/Menulisttable";
 import Listmenu from "../Layout/LIstmenu/Listmenu";
+import BackgroundSlider from "react-background-slider";
+import im1 from "../../assets/im1.jpeg";
+import im2 from "../../assets/im2.jpg";
+import im3 from "../../assets/im3.jpg";
+import im4 from "../../assets/im4.jpeg";
+import Backgroundslider from "../Layout/Backgroundslider/Backgroundslider";
 const items = [
   "southindian",
   "northindian",
@@ -25,6 +31,28 @@ const items = [
   "icecreams",
   "sweets",
 ];
+const southindianCOST = {
+  Biryani: 50,
+  Khichdi: 100,
+  buttermasala: 150,
+  Idiappam: 200,
+  Keerai: 300,
+  Kothamali: 200,
+  Pongal: 200,
+  Ragimudhe: 200,
+};
+const itemscushion = {
+  southindian: {
+    Biryani: 0,
+    Khichdi: 0,
+    buttermasala: 0,
+    Idiappam: 0,
+    Keerai: 0,
+    Kothamali: 0,
+    Pongal: 0,
+    Ragimudhe: 0,
+  },
+};
 let arr = [];
 export class Menubutton extends Component {
   state = {
@@ -43,10 +71,10 @@ export class Menubutton extends Component {
     });
   };
   render() {
-    console.log(this.state);
     let item = items.map((e) => {
+      let it = e;
       return (
-        <Buttons click={this.routehandler} key={e.concat(Math.random())}>
+        <Buttons cost={itemscushion[e]} key={e.concat(Math.random())}>
           {e}
         </Buttons>
       );

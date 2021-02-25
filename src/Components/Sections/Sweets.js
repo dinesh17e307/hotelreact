@@ -8,10 +8,18 @@ const rows = {
   mutton: 300,
   flower: 200,
 };
+const ingredient = {
+  chiecken: 0,
+  Mutton: 0,
+  berry: 0,
+  chilly: 0,
+  mutton: 0,
+  flower: 0,
+};
 function Sweets() {
   return (
     <div>
-      <Menulisttable data={rows} />
+      <Menulisttable data={rows} dish={ingredient} />
     </div>
   );
 }

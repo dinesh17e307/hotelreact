@@ -8,10 +8,18 @@ const rows = {
   mutton: 300,
   flower: 200,
 };
+const ingredient = {
+  chappathi: 0,
+  naan: 0,
+  burger: 0,
+  Piazza: 0,
+  mutton: 0,
+  flower: 0,
+};
 function Northindian() {
   return (
     <div>
-      <Menulisttable data={rows} />
+      <Menulisttable data={rows} dish={ingredient} />
     </div>
   );
 }

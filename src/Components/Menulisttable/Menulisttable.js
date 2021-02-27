@@ -18,53 +18,52 @@ class Menulisttable extends Component {
     ingredient: [],
     totalprice: 0,
   };
-  componentDidMount() {
-    this.setState({ ingredient: this.props.dish });
-  }
+  // componentDidMount() {
+  //   console.log(this.props.data);
+  // }
 
-  componentWillUnmount() {
-    arr.push(this.state.ingredient);
-    cost.push(this.state.totalprice);
-    console.log(arr, cost);
-  }
-  order = (event) => {
-    event.preventDefault();
-    arr.push(this.state.ingredient);
-  };
-  onaddhandler = (type) => {
-    const oldcount = this.state.ingredient[type];
-    const newcount = oldcount + 1;
-    const updatedingredient = {
-      ...this.state.ingredient,
-    };
-    updatedingredient[type] = newcount;
-    const oldprice = this.state.totalprice;
-    const newprice = oldprice + this.props.data[type];
-    this.setState({
-      totalprice: newprice,
-      ingredient: updatedingredient,
-    });
-  };
-  onremovehandler = (type) => {
-    const oldcount = this.state.ingredient[type];
-    if (oldcount <= 0) {
-      return;
-    }
-    const newcount = oldcount - 1;
-    const updatedingredient = {
-      ...this.state.ingredient,
-    };
-    updatedingredient[type] = newcount;
-    const oldprice = this.state.totalprice;
-    const newprice = oldprice - this.props.data[type];
-    this.setState({
-      totalprice: newprice,
-      ingredient: updatedingredient,
-    });
-  };
+  // componentWillUnmount() {
+  //   arr.push(this.state.ingredient);
+  //   cost.push(this.state.totalprice);
+  //   console.log(arr, cost);
+  // }
+  // order = (event) => {
+  //   event.preventDefault();
+  //   arr.push(this.state.ingredient);
+  // };
+  // onaddhandler = (type) => {
+  //   const oldcount = this.state.ingredient[type];
+  //   const newcount = oldcount + 1;
+  //   const updatedingredient = {
+  //     ...this.state.ingredient,
+  //   };
+  //   updatedingredient[type] = newcount;
+  //   const oldprice = this.state.totalprice;
+  //   const newprice = oldprice + this.props.data[type];
+  //   this.setState({
+  //     totalprice: newprice,
+  //     ingredient: updatedingredient,
+  //   });
+  // };
+  // onremovehandler = (type) => {
+  //   const oldcount = this.state.ingredient[type];
+  //   if (oldcount <= 0) {
+  //     return;
+  //   }
+  //   const newcount = oldcount - 1;
+  //   const updatedingredient = {
+  //     ...this.state.ingredient,
+  //   };
+  //   updatedingredient[type] = newcount;
+  //   const oldprice = this.state.totalprice;
+  //   const newprice = oldprice - this.props.data[type];
+  //   this.setState({
+  //     totalprice: newprice,
+  //     ingredient: updatedingredient,
+  //   });
+  // };
 
   render() {
-    console.log(this.state);
     return (
       <UserProvider value={arr}>
         <div>

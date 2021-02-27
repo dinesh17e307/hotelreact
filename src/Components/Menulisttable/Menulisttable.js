@@ -10,7 +10,9 @@ import classes from "./Menulisttable.module.css";
 import Buttons from "../Layout/Button/Buttons";
 import Buttontable from "../Layout/Buttontable/Buttontable";
 import Buttonless from "../Layout/Buttontable/Buttonless";
-let arr;
+import { UserProvider } from "./../ContextAPI/ContextAPI";
+let arr = [];
+let cost = [];
 class Menulisttable extends Component {
   state = {
     ingredient: [],
@@ -19,10 +21,16 @@ class Menulisttable extends Component {
   componentDidMount() {
     this.setState({ ingredient: this.props.dish });
   }
+
   componentWillUnmount() {
-    console.log("finally");
-    console.log(this.state);
+    arr.push(this.state.ingredient);
+    cost.push(this.state.totalprice);
+    console.log(arr, cost);
   }
+  order = (event) => {
+    event.preventDefault();
+    arr.push(this.state.ingredient);
+  };
   onaddhandler = (type) => {
     const oldcount = this.state.ingredient[type];
     const newcount = oldcount + 1;
@@ -58,47 +66,51 @@ class Menulisttable extends Component {
   render() {
     console.log(this.state);
     return (
-      <div>
-        <TableContainer component={Paper}>
-          <Table className={classes.table} aria-label="simple table">
-            <TableBody>
-              {Object.keys(this.props.data).map((item) => {
-                return (
-                  <TableRow key={item}>
-                    <TableCell component="th" scope="row">
-                      {item}
-                    </TableCell>
-                    <TableCell align="left">
-                      {
-                        <Buttontable
-                          add={this.onaddhandler}
-                          cost={this.props.data[item]}
-                          item={item}
-                        >
-                          add
-                        </Buttontable>
-                      }
-                    </TableCell>
-                    <TableCell align="left">
-                      {
-                        <Buttonless
-                          less={this.onremovehandler}
-                          item={item}
-                          cost={this.props.data[item]}
-                        >
-                          less
-                        </Buttonless>
-                      }
-                    </TableCell>
-                    <TableCell align="left">{1}</TableCell>
-                    <TableCell align="left">{this.props.data[item]}</TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </div>
+      <UserProvider value={arr}>
+        <div>
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableBody>
+                {Object.keys(this.props.data).map((item) => {
+                  return (
+                    <TableRow key={item}>
+                      <TableCell component="th" scope="row">
+                        {item}
+                      </TableCell>
+                      <TableCell align="left">
+                        {
+                          <Buttontable
+                            add={this.onaddhandler}
+                            cost={this.props.data[item]}
+                            item={item}
+                          >
+                            add
+                          </Buttontable>
+                        }
+                      </TableCell>
+                      <TableCell align="left">
+                        {
+                          <Buttonless
+                            less={this.onremovehandler}
+                            item={item}
+                            cost={this.props.data[item]}
+                          >
+                            less
+                          </Buttonless>
+                        }
+                      </TableCell>
+                      <TableCell align="left">{1}</TableCell>
+                      <TableCell align="left">
+                        {this.props.data[item]}
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </div>
+      </UserProvider>
     );
   }
 }

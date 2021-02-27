@@ -22,6 +22,7 @@ import im2 from "../../assets/im2.jpg";
 import im3 from "../../assets/im3.jpg";
 import im4 from "../../assets/im4.jpeg";
 import Backgroundslider from "../Layout/Backgroundslider/Backgroundslider";
+import Sliderimages from "../Layout/Sliderimages/Sliderimages";
 const items = [
   "southindian",
   "northindian",
@@ -86,6 +87,7 @@ export class Menubutton extends Component {
         </section>
 
         <div className={classes.Menubutton}>
+          {/* <Sliderimages /> */}
           <Switch>
             <Route exact path="/southindian" component={Southindian} />
             <Route exact path="/northindian" component={Northindian} />

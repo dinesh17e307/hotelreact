@@ -8,7 +8,11 @@ const Buttons = (props) => {
     <div className={classes.Buttons}>
       <Link to={"/" + props.children}>
         {" "}
-        <Button variant="contained" color="secondary">
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => props.cusine(props.children)}
+        >
           {props.children}
         </Button>
       </Link>

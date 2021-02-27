@@ -80,7 +80,7 @@ class Menulisttable extends Component {
                       <TableCell align="left">
                         {
                           <Buttontable
-                            add={this.onaddhandler}
+                            add={() => this.props.add(item)}
                             cost={this.props.data[item]}
                             item={item}
                           >
@@ -91,7 +91,7 @@ class Menulisttable extends Component {
                       <TableCell align="left">
                         {
                           <Buttonless
-                            less={this.onremovehandler}
+                            less={() => this.props.less(item)}
                             item={item}
                             cost={this.props.data[item]}
                           >

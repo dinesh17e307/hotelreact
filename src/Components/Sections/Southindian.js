@@ -60,7 +60,7 @@ class Southindian extends React.Component {
     console.log(this.state);
     return (
       <div>
-        <Menulisttable data={INGREDIENTCOST} dish={this.state.ingredient} />
+        {/* <Menulisttable data={INGREDIENTCOST} dish={this.state.ingredient} /> */}
       </div>
     );
   }

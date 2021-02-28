@@ -1,6 +1,9 @@
+import classes from "./Hotelmenu.module.css";
 import React, { Component } from "react";
+import Buttons from "../../Components/Layout/Button/Buttons";
 import Listmenu from "../../Components/Layout/LIstmenu/Listmenu";
 import Menubutton from "../../Components/Menubutton/Menubutton";
+import Routing from "../../Components/Routing/Routing";
 
 export class Hotelmenu extends Component {
   state = {
@@ -9,7 +12,7 @@ export class Hotelmenu extends Component {
 
   render() {
     return (
-      <div>
+      <div className={classes.Hotelmenu}>
         <Listmenu />
         <Menubutton />
       </div>

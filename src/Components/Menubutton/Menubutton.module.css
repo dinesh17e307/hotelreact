@@ -12,7 +12,18 @@
 }
 @media(max-width:500px){
     .Menubutton{
-        width: 48%;
+        width: 100%;
         height: 400px;
     }
+    .Header{
+        width:400px;
+    overflow: scroll;
+        justify-content: row wrap;
+    }
+    
+}
+.order{
+    width: 100%;
+    height: 300px;
+    background-color: aqua;
 }

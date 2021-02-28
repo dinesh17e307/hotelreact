@@ -73,9 +73,7 @@ class Menulisttable extends Component {
                 {Object.keys(this.props.data).map((item) => {
                   return (
                     <TableRow key={item}>
-                      <TableCell component="th" scope="row">
-                        {item}
-                      </TableCell>
+                      <TableCell align="left">{item}</TableCell>
                       <TableCell align="left">
                         {
                           <Buttontable
@@ -98,7 +96,7 @@ class Menulisttable extends Component {
                           </Buttonless>
                         }
                       </TableCell>
-                      <TableCell align="left">{1}</TableCell>
+
                       <TableCell align="left">
                         {this.props.data[item]}
                       </TableCell>

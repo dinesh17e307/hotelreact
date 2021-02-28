@@ -1,20 +1,9 @@
 import classes from "./Menubutton.module.css";
 import React, { Component } from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import Buttons from "../Layout/Button/Buttons";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Menulisttable from "../Menulisttable/Menulisttable";
-import Listmenu from "../Layout/LIstmenu/Listmenu";
-import BackgroundSlider from "react-background-slider";
-import im1 from "../../assets/im1.jpeg";
-import im2 from "../../assets/im2.jpg";
-import im3 from "../../assets/im3.jpg";
-import im4 from "../../assets/im4.jpeg";
-import Backgroundslider from "../Layout/Backgroundslider/Backgroundslider";
-import Sliderimages from "../Layout/Sliderimages/Sliderimages";
+import Rout from "../../Components/Routing/Routing";
 import { withRouter } from "react-router-dom";
 let cusineset = "hi";
 const items = [
@@ -25,6 +14,7 @@ const items = [
   "freshjuice",
   "icecreams",
   "sweets",
+  "Order",
 ];
 const southCOST = {
   southindian: {
@@ -67,8 +57,8 @@ const southCOST = {
     Vanilla: 300,
     Chocolate: 250,
     Cookies: 320,
-    MintChocolateChip: 530,
-    ChocolateChipCookie: 240,
+    MintChocolate: 530,
+    ChocolateChip: 240,
     ButteredPecan: 320,
     BirthdayCake: 230,
     Strawberry: 520,
@@ -142,8 +132,8 @@ const itemscushion = {
     Vanilla: 0,
     Chocolate: 0,
     Cookies: 0,
-    MintChocolateChip: 0,
-    ChocolateChipCookie: 0,
+    MintChocolate: 0,
+    ChocolateChip: 0,
     ButteredPecan: 0,
     BirthdayCake: 0,
     Strawberry: 0,
@@ -221,8 +211,8 @@ export class Menubutton extends Component {
       Vanilla: 0,
       Chocolate: 0,
       Cookies: 0,
-      MintChocolateChip: 0,
-      ChocolateChipCookie: 0,
+      MintChocolate: 0,
+      ChocolateChip: 0,
       ButteredPecan: 0,
       BirthdayCake: 0,
       Strawberry: 0,
@@ -258,11 +248,29 @@ export class Menubutton extends Component {
     cusine: "",
   };
   setcusine = (cusin) => {
-    this.setState({
-      cusine: cusin,
-    });
-    cusineset = cusin;
-    console.log(cusineset);
+    if (cusin === "Order") {
+      // this.props.history.push("/Order");
+      // const paramingredient = [];
+      // for (let i in this.state.southindian) {
+      //   paramingredient.push(
+      //     encodeURIComponent(i) +
+      //       "=" +
+      //       encodeURIComponent(this.state.southindian[i])
+      //   );
+      // }
+      // paramingredient.push("price=" + this.state.totalprice);
+      // // const stringparam = paramingredient.join("&");
+      // this.props.history.push({
+      //   pathname: "/Order",
+      //   search: "?" + "billing",
+      // });
+    } else {
+      // this.setState({
+      //   cusine: cusin,
+      // });
+      cusineset = cusin;
+      console.log(cusineset);
+    }
   };
   onaddhandler = (type) => {
     const oldcount = this.state[cusineset][type];
@@ -297,7 +305,7 @@ export class Menubutton extends Component {
   };
 
   render() {
-    console.log(this.state);
+    console.log(this.props);
     let item = items.map((e) => {
       let it = e;
       return (
@@ -312,9 +320,7 @@ export class Menubutton extends Component {
     });
     return (
       <div>
-        <section>
-          <Toolbar className={classes.Header}>{item}</Toolbar>
-        </section>
+        <div className={classes.Header}>{item}</div>
 
         <div className={classes.Menubutton}>
           {/* <Sliderimages /> */}
@@ -398,7 +404,11 @@ export class Menubutton extends Component {
                 />
               )}
             />
+            <Route path="/Order" render={() => <Rout data={this.state} />} />
           </Switch>
+        </div>
+        <div className={classes.order}>
+          <Buttons btntype="Success">ORDER NOW</Buttons>
         </div>
       </div>
     );

@@ -44,7 +44,7 @@ class App extends React.Component {
                 )
               }
             />
-            <Link exact to="/weather" component={Hotelmenu} />
+            <Link exact to="/hotel" component={Hotelmenu} />
           </Switch>
         </Router>
       </div>

@@ -5,6 +5,8 @@ import Logincard from "./Components/Layout/Logincard/Logincard";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Hotelmenu from "./Containers/Hotelmenu/Hotelmenu";
 import Backgroundslider from "./Components/Layout/Backgroundslider/Backgroundslider";
+import Rout from "./Components/Routing/Routing";
+import Myorders from "./Containers/Myorders/Myorders";
 class App extends React.Component {
   state = {
     islog: false,
@@ -30,23 +32,16 @@ class App extends React.Component {
     return (
       <div className={classes.App}>
         <Backgroundslider />
-        <Layout customername={this.state.customername} />
-        <Router>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={() =>
-                !islog ? (
-                  <Logincard islog={this.LoginHandler} />
-                ) : (
-                  <Hotelmenu customername={this.state.customername} />
-                )
-              }
-            />
-            <Link exact to="/hotel" component={Hotelmenu} />
-          </Switch>
-        </Router>
+        <Layout customername={this.state.customername}></Layout>
+
+        <Switch>
+          <Route exact path="/" component={Hotelmenu} />
+          <Route exact path="/hotel" component={Hotelmenu} />
+          <Route exact path="/myorder" component={Myorders} />
+          <Link exact to="/hotel" component={Hotelmenu} />
+        </Switch>
+
+        {/* <Hotelmenu /> */}
       </div>
     );
   }

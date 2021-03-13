@@ -5,6 +5,10 @@
     background-color: blueviolet;
 
 }
+.Toolbar a{
+    color: white;
+    text-decoration: none;
+}
 @media(max-width:500px){
     
 }

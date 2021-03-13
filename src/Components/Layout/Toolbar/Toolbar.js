@@ -6,6 +6,8 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import classes from "./Toolbal.module.css";
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
+import Sidenav from "../sidenav/Sidenav";
 
 class Toolsbar extends Component {
   render() {
@@ -15,7 +17,14 @@ class Toolsbar extends Component {
           <Toolbar className={classes.Toolbar}>
             {/* <Sidenavbar clicked={this.props.togglesidenavbar} /> */}
             <Typography variant="h6">Adyar Anandha bhavan</Typography>
+            <Button>
+              <Link to="/myorder">myorder</Link>
+            </Button>
+            <Button>
+              <Link to="/hotel">menu</Link>
+            </Button>
             <Button color="inherit">{this.props.customername}</Button>
+            <Sidenav />
           </Toolbar>
         </AppBar>
       </div>

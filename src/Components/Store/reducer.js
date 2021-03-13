@@ -1,17 +1,15 @@
 import * as actiontypes from "./action";
-const initialstate = {};
-const initialState = {};
+const initialState = {
+  ordernow: false,
+};
 
-export default (state = initialState, action) => {
+const reducers = (state = initialState, action) => {
   switch (action.type) {
-    case actiontypes.ADDINGREDIENT:
-      return { ...state };
-    case actiontypes.REMOVEINGREDIENT:
-      return {
-        ...state,
-      };
+    case actiontypes.ORDERNOW:
+      return { ...state, ordernow: true };
 
     default:
       return state;
   }
 };
+export default reducers;

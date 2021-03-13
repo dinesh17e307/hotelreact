@@ -4,6 +4,8 @@ import Buttons from "../../Components/Layout/Button/Buttons";
 import Listmenu from "../../Components/Layout/LIstmenu/Listmenu";
 import Menubutton from "../../Components/Menubutton/Menubutton";
 import Routing from "../../Components/Routing/Routing";
+import { Link } from "react-router-dom";
+import Sidenav from "../../Components/Layout/sidenav/Sidenav";
 
 export class Hotelmenu extends Component {
   state = {

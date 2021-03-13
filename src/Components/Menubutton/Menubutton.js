@@ -247,6 +247,10 @@ export class Menubutton extends Component {
     totalprice: 0,
     cusine: "",
   };
+  basestate = this.state;
+  onsetnull = () => {
+    this.setState(this.basestate);
+  };
   setcusine = (cusin) => {
     if (cusin === "Order") {
       // this.props.history.push("/Order");
@@ -404,11 +408,11 @@ export class Menubutton extends Component {
                 />
               )}
             />
-            <Route path="/Order" render={() => <Rout data={this.state} />} />
+            <Route
+              path="/Order"
+              render={() => <Rout data={this.state} nullset={this.onsetnull} />}
+            />
           </Switch>
-        </div>
-        <div className={classes.order}>
-          <Buttons btntype="Success">ORDER NOW</Buttons>
         </div>
       </div>
     );

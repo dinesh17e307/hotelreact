@@ -1,14 +1,17 @@
-.Toolbar{
+.tool{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: blueviolet;
+    height: 60px;
 
 }
-.Toolbar a{
+.tool a{
     color: white;
     text-decoration: none;
 }
-@media(max-width:500px){
-    
+@media (max-width:499px){
+    .tool{
+        display:none;
+    }
 }

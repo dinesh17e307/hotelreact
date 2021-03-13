@@ -2,7 +2,6 @@
     width: 50%;
     height:200px;
     overflow-y: scroll;
-   padding-left:  100px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     box-shadow: 0 2px 3px #eeee;
@@ -12,4 +11,10 @@
     list-style: none;
     margin-bottom: 10px;
 
+}
+@media(max-width:500px){
+    .singleorder{
+        margin-left: 100px;
+    left: 100px;
+    }
 }

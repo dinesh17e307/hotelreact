@@ -15,13 +15,20 @@ export class Layout extends Component {
   };
   togglesidedrawerhandler = () => {
     this.setState({
-      sidedraw: true,
+      sidedraw: !this.state.sidedraw,
     });
   };
   render() {
     return (
       <div className={classes.Layout}>
-        <Toolsbar customername={this.props.customername} />
+        <Toolsbar
+          customername={this.props.customername}
+          toggle={this.togglesidedrawerhandler}
+        />
+        <Sidenav
+          open={this.state.sidedraw}
+          toggle={this.togglesidedrawerhandler}
+        />
       </div>
     );
   }

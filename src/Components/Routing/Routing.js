@@ -7,6 +7,7 @@ import axios from "../../Axios";
 import * as actions from "./../Store/action";
 import { connect } from "react-redux";
 import Spinner from "../Spinner/Spinner";
+import { ThumbDownSharp } from "@material-ui/icons";
 let arr = [];
 let arr1 = [];
 let price;
@@ -52,7 +53,8 @@ class Rout extends Component {
       orders: null,
     });
     arr = null;
-    this.props.onorder();
+    this.props.nullset();
+    price = 0;
   };
   render() {
     let ar = <Spinner />;
@@ -75,8 +77,6 @@ class Rout extends Component {
             ORDER NOW
           </Button>
         </div>
-
-        <h1>welcome to my hotel</h1>
       </div>
     );
   }

@@ -11,6 +11,7 @@ class Listmenu extends Component {
     isempty: true,
   };
   render() {
+    console.log(this.props.ordernow);
     return (
       <React.Fragment>
         <Card className={classes.Listmenu} variant="outlined">

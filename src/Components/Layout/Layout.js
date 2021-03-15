@@ -7,7 +7,9 @@ import Sidenav from "./sidenav/Sidenav";
 export class Layout extends Component {
   state = {
     sidedraw: false,
+    customername: "",
   };
+
   closesidedrawhandler = () => {
     this.setState({
       sidedraw: false,
@@ -27,6 +29,7 @@ export class Layout extends Component {
         />
         <Sidenav
           open={this.state.sidedraw}
+          customername={this.props.customername}
           toggle={this.togglesidedrawerhandler}
         />
       </div>

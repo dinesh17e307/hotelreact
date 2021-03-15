@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Menulisttable from "../Menulisttable/Menulisttable";
 import Rout from "../../Components/Routing/Routing";
 import { withRouter } from "react-router-dom";
+import * as actions from "./../Store/action";
+import { connect } from "react-redux";
 let cusineset = "hi";
 const items = [
   "southindian",
@@ -272,6 +274,7 @@ export class Menubutton extends Component {
       // this.setState({
       //   cusine: cusin,
       // });
+      this.props.onorderset();
       cusineset = cusin;
       console.log(cusineset);
     }
@@ -418,5 +421,9 @@ export class Menubutton extends Component {
     );
   }
 }
-
-export default withRouter(Menubutton);
+const mapdispatchtoprops = (dispatch) => {
+  return {
+    onorderset: () => dispatch({ type: actions.ORDERNOWAFTER }),
+  };
+};
+export default connect(null, mapdispatchtoprops)(withRouter(Menubutton));

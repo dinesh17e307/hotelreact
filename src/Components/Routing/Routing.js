@@ -53,6 +53,7 @@ class Rout extends Component {
       orders: null,
     });
     arr = null;
+    this.props.onorder();
     this.props.nullset();
     price = 0;
   };

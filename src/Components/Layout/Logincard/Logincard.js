@@ -21,13 +21,13 @@ const Login = (props) => (
               given below
             </Typography>
 
-            <Loginform log={props.islog} />
+            <Loginform log={props.log} />
           </CardContent>
         </CardActionArea>
       </Card>
     </div>
     <div className={classes.google}>
-      <Logingoog log={props.log} />
+      <Logingoog log={props.onsuccess} />
     </div>
   </div>
 );

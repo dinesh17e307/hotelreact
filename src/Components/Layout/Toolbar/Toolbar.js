@@ -14,7 +14,7 @@ class Toolsbar extends Component {
         <AppBar>
           <Toolbar className={classes.Toolbar}>
             {/* <Sidenavbar clicked={this.props.togglesidenavbar} /> */}
-            <Typography variant="h6">Adyar Anandha bhavan</Typography>
+            <Typography variant="h6">A2B</Typography>
             <Button color="inherit">{this.props.customername}</Button>
           </Toolbar>
         </AppBar>

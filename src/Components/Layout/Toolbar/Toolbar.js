@@ -9,19 +9,35 @@ import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import Sidenav from "../sidenav/Sidenav";
 import Toggle from "../sidenav/Toggle/Toggle";
+import Login from "../Logingoogle/Loginwithgoogle";
+import { connect } from "react-redux";
+import * as actions from "../../Store/action";
 class Toolsbar extends Component {
   render() {
+    console.log(this.props.islogin);
     return (
       <div>
         <AppBar>
           <Toggle toggle={this.props.toggle} />
           <div className={classes.tool}>
-            <Typography variant="h6">Adyar Anandha bhavan</Typography>
-            <Button>
-              <Link to="/myorder">myorder</Link>
+            <Typography variant="h6">
+              <Link to="/">A2B</Link>
+            </Typography>
+            <Button disabled={true}>
+              <Link
+                style={{ display: this.props.islogin ? "" : "none" }}
+                to="/myorder"
+              >
+                myorder
+              </Link>
             </Button>
             <Button>
-              <Link to="/hotel">menu</Link>
+              <Link
+                style={{ display: this.props.islogin ? "" : "none" }}
+                to="/hotel"
+              >
+                menu
+              </Link>
             </Button>
             <Button color="inherit">{this.props.customername}</Button>
           </div>
@@ -31,4 +47,14 @@ class Toolsbar extends Component {
   }
 }
 
-export default Toolsbar;
+const mapStateWithProps = (state) => {
+  return {
+    islogin: state.islogin,
+  };
+};
+const mapdispatchtoprops = (dispatch) => {
+  return {
+    onLogin: () => dispatch({ type: actions.LOGIN }),
+  };
+};
+export default connect(mapStateWithProps, mapdispatchtoprops)(Toolsbar);

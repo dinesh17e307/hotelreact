@@ -2,6 +2,8 @@ import Layout from "./Components/Layout/Layout";
 import React from "react";
 import classes from "./App.module.css";
 import Logincard from "./Components/Layout/Logincard/Logincard";
+import { connect } from "react-redux";
+import * as actions from "./Components/Store/action";
 import {
   BrowserRouter as Router,
   Route,
@@ -43,6 +45,7 @@ class App extends React.Component {
     this.setState({
       islog: true,
     });
+    this.props.onLogin();
     this.props.history.push("/hotel");
   };
   render() {
@@ -72,5 +75,14 @@ class App extends React.Component {
     );
   }
 }
-
-export default withRouter(App);
+const mapStateWithProps = (state) => {
+  return {
+    islogin: state.islogin,
+  };
+};
+const mapdispatchtoprops = (dispatch) => {
+  return {
+    onLogin: () => dispatch({ type: actions.LOGIN }),
+  };
+};
+export default connect(mapStateWithProps, mapdispatchtoprops)(withRouter(App));

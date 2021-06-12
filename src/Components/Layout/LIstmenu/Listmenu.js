@@ -11,7 +11,7 @@ class Listmenu extends Component {
     isempty: true,
   };
   render() {
-    console.log(this.props.ordernow);
+    console.log(this.props.ordernow, this.props.islogin, this.props.username);
     return (
       <React.Fragment>
         <Card className={classes.Listmenu} variant="outlined">
@@ -35,6 +35,7 @@ class Listmenu extends Component {
 const mapstatetoprops = (state) => {
   return {
     ordernow: state.ordernow,
+    islogin: state.islogin,
   };
 };
 export default connect(mapstatetoprops)(Listmenu);

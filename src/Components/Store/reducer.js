@@ -1,6 +1,7 @@
 import * as actiontypes from "./action";
 const initialState = {
   ordernow: false,
+  islogin: false,
 };
 
 const reducers = (state = initialState, action) => {
@@ -9,6 +10,8 @@ const reducers = (state = initialState, action) => {
       return { ...state, ordernow: true };
     case actiontypes.ORDERNOWAFTER:
       return { ...state, ordernow: false };
+    case actiontypes.LOGIN:
+      return { ...state, islogin: true };
 
     default:
       return state;

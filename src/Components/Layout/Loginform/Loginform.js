@@ -4,6 +4,8 @@ import classes from "./Loginform.module.css";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import Login from "../Logingoogle/Loginwithgoogle";
+import { connect } from "react-redux";
+import * as actions from "./../../Store/action";
 
 class Loginform extends React.Component {
   state = {
@@ -63,6 +65,7 @@ class Loginform extends React.Component {
           <Button
             variant="contained"
             color="secondary"
+            disabled={this.state.Novveg || this.state.veg ? false : true}
             onClick={() => this.props.log(this.state)}
           >
             GET MENU
@@ -73,4 +76,14 @@ class Loginform extends React.Component {
   }
 }
 
-export default Loginform;
+const mapStateWithProps = (state) => {
+  return {
+    islogin: state.islogin,
+  };
+};
+const mapdispatchtoprops = (dispatch) => {
+  return {
+    onLogin: () => dispatch({ type: actions.LOGIN }),
+  };
+};
+export default connect(mapStateWithProps, mapdispatchtoprops)(Loginform);

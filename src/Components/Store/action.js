@@ -1,3 +1,4 @@
 export const ORDERNOW = "ORDERNOW";
 export const REMOVEINGREDIENT = "REMOVEINGREDIENT";
 export const ORDERNOWAFTER = "ORDERNOWAFTER";
+export const LOGIN = "LOGIN";

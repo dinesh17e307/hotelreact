@@ -72,7 +72,7 @@ class App extends React.Component {
 
           <Route exact path="/hotel" component={Hotelmenu} />
           <Route exact path="/myorder" component={Myorders} />
-          {this.props.islogin ? <Link to="/hotel" component={Hotelmenu} /> : ""}
+          <Link to="/hotel" component={Hotelmenu} />
         </Switch>
 
         {/* <Hotelmenu /> */}

@@ -22,7 +22,7 @@ const Sidenav = (props) => {
         <nav style={{ display: "flex", flexDirection: "column" }}>
           <Typography variant="h6">
             {" "}
-            <Link to="/">A2B</Link>
+            <Link to="/login">A2B</Link>
           </Typography>
           <Button disabled={true}>
             <Link

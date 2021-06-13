@@ -40,7 +40,7 @@ class Toolsbar extends Component {
               </Link>
             </Button>
             <Button color="inherit" onClick={this.props.onafterlogin()}>
-              <Link to="/login">{this.props.customername}</Link>
+              <Link to="/">{this.props.customername}</Link>
             </Button>
           </div>
         </AppBar>

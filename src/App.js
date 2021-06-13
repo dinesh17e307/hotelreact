@@ -61,7 +61,7 @@ class App extends React.Component {
         <Switch>
           <Route
             exact
-            path="/login"
+            path="/"
             render={() => (
               <Logincard
                 onsuccess={this.googleresponse}
@@ -73,7 +73,7 @@ class App extends React.Component {
           <Route exact path="/hotel" component={Hotelmenu} />
           <Route exact path="/myorder" component={Myorders} />
           <Link to="/hotel" component={Hotelmenu} />
-          <Link to="/" component={Logincard} />
+          <Link to="/login" component={Logincard} />
         </Switch>
 
         {/* <Hotelmenu /> */}

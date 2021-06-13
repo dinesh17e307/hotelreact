@@ -72,7 +72,6 @@ class App extends React.Component {
 
           <Route exact path="/hotel" component={Hotelmenu} />
           <Route exact path="/myorder" component={Myorders} />
-          <Link exact to="/login" component={Logincard} />
           {this.props.islogin ? <Link to="/hotel" component={Hotelmenu} /> : ""}
         </Switch>
 

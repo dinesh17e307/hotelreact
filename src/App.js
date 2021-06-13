@@ -70,9 +70,9 @@ class App extends React.Component {
             )}
           />
 
-          <Route exact path="/hotel" component={Hotelmenu} />
-          <Route exact path="/myorder" component={Myorders} />
-          <Link to="/hotel" component={Hotelmenu} />
+          <Route path="/hotel" component={Hotelmenu} />
+          <Route path="/myorder" component={Myorders} />
+          <Link to="/login" component={Logincard} />
         </Switch>
 
         {/* <Hotelmenu /> */}

@@ -33,6 +33,8 @@ class App extends React.Component {
       veg: e.veg,
       Novveg: e.Novveg,
     });
+    this.props.onLogin();
+    this.props.history.push("/hotel");
   };
   googleresponse = (response) => {
     console.log(response.profileObj);
@@ -61,7 +63,10 @@ class App extends React.Component {
             exact
             path="/"
             render={() => (
-              <Logincard onsuccess={this.googleresponse} log={this.islog} />
+              <Logincard
+                onsuccess={this.googleresponse}
+                log={this.LoginHandler}
+              />
             )}
           />
 

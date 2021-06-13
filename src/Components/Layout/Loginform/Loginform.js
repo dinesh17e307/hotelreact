@@ -17,60 +17,59 @@ class Loginform extends React.Component {
     Novveg: false,
   };
   render() {
+    console.log(this.state);
     return (
       <div>
-        <form className={classes.Loginform}>
-          <TextField
-            onChange={(event) => {
-              this.setState({ customername: event.target.value });
-            }}
-            label="Customer Name"
-            type="search"
-            fullWidth
-            placeholder="dinesh sellappan"
-          />{" "}
-          <br></br>
-          <TextField
-            onChange={(event) => {
-              this.setState({ phonenumber: event.target.value });
-            }}
-            label="Mobile Number"
-            defaultValue="+91"
-            type="number"
-            fullWidth
-          />
-          <br></br>
-          <TextField
-            onChange={(event) => {
-              this.setState({ count: event.target.value });
-            }}
-            label="Family Count"
-            type="number"
-            fullWidth
-          />
-          <br></br>
-          <label>Veg</label>
-          <Checkbox
-            onChange={() => {
-              this.setState({ veg: true });
-            }}
-          />
-          <label>Non Veg</label>
-          <Checkbox
-            onChange={() => {
-              this.setState({ Novveg: true });
-            }}
-          />
-          <br></br>
-          <Button
-            variant="contained"
-            color="secondary"
-            disabled={this.state.Novveg || this.state.veg ? false : true}
-            onClick={() => this.props.log(this.state)}
-          >
-            GET MENU
-          </Button>
-        </form>
+        <TextField
+          onChange={(event) => {
+            this.setState({ customername: event.target.value });
+          }}
+          label="Customer Name"
+          type="search"
+          fullWidth
+          placeholder="dinesh sellappan"
+        />{" "}
+        <br></br>
+        <TextField
+          onChange={(event) => {
+            this.setState({ phonenumber: event.target.value });
+          }}
+          label="Mobile Number"
+          defaultValue="+91"
+          type="number"
+          fullWidth
+        />
+        <br></br>
+        <TextField
+          onChange={(event) => {
+            this.setState({ count: event.target.value });
+          }}
+          label="Family Count"
+          type="number"
+          fullWidth
+        />
+        <br></br>
+        <label>Veg</label>
+        <Checkbox
+          onChange={() => {
+            this.setState({ veg: true });
+          }}
+        />
+        <label>Non Veg</label>
+        <Checkbox
+          onChange={() => {
+            this.setState({ Novveg: true });
+          }}
+        />
+        <br></br>
+        <Button
+          variant="contained"
+          color="secondary"
+          disabled={this.state.Novveg || this.state.veg ? false : true}
+          onClick={() => this.props.log(this.state)}
+        >
+          GET MENU
+        </Button>
       </div>
     );
   }

@@ -39,7 +39,9 @@ class Toolsbar extends Component {
                 menu
               </Link>
             </Button>
-            <Button color="inherit">{this.props.customername}</Button>
+            <Button color="inherit">
+              <Link to="/">{this.props.customername}</Link>
+            </Button>
           </div>
         </AppBar>
       </div>

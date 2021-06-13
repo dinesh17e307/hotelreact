@@ -5,6 +5,8 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png";
+import { connect } from "react-redux";
+import * as actions from "../../Store/action";
 const Sidenav = (props) => {
   let sideclass = [classes.sidedrawer, classes.open];
   if (props.open) {
@@ -17,20 +19,42 @@ const Sidenav = (props) => {
         <div className={classes.logo}>
           <img src={logo} alt="logo" />
         </div>
-        <nav>
-          <Typography variant="h6">Adyar Anandha bhavan</Typography>
-          <Button>
-            <Link to="/myorder">myorder</Link>
+        <nav style={{ display: "flex", flexDirection: "column" }}>
+          <Typography variant="h6">
+            {" "}
+            <Link to="/">A2B</Link>
+          </Typography>
+          <Button disabled={true}>
+            <Link
+              style={{ display: props.islogin ? "" : "none" }}
+              to="/myorder"
+            >
+              myorder
+            </Link>
           </Button>
-          <br></br>
           <Button>
-            <Link to="/hotel">menu</Link>
+            <Link style={{ display: props.islogin ? "" : "none" }} to="/hotel">
+              menu
+            </Link>
           </Button>
-          <Button color="inherit">{props.customername}</Button>
+          <Button color="inherit" onClick={props.onafterlogin()}>
+            <Link to="/">{props.customername}</Link>
+          </Button>
         </nav>
       </div>
     </div>
   );
 };
 
-export default Sidenav;
+const mapStateWithProps = (state) => {
+  return {
+    islogin: state.islogin,
+  };
+};
+const mapdispatchtoprops = (dispatch) => {
+  return {
+    onLogin: () => dispatch({ type: actions.LOGIN }),
+    onafterlogin: () => dispatch({ type: actions.AFTERLOGIN }),
+  };
+};
+export default connect(mapStateWithProps, mapdispatchtoprops)(Sidenav);

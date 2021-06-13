@@ -12,6 +12,8 @@ const reducers = (state = initialState, action) => {
       return { ...state, ordernow: false };
     case actiontypes.LOGIN:
       return { ...state, islogin: true };
+    case actiontypes.AFTERLOGIN:
+      return { ...state, islogin: false };
 
     default:
       return state;

@@ -39,7 +39,7 @@ class Toolsbar extends Component {
                 menu
               </Link>
             </Button>
-            <Button color="inherit">
+            <Button color="inherit" onClick={this.props.onafterlogin()}>
               <Link to="/">{this.props.customername}</Link>
             </Button>
           </div>
@@ -57,6 +57,7 @@ const mapStateWithProps = (state) => {
 const mapdispatchtoprops = (dispatch) => {
   return {
     onLogin: () => dispatch({ type: actions.LOGIN }),
+    onafterlogin: () => dispatch({ type: actions.AFTERLOGIN }),
   };
 };
 export default connect(mapStateWithProps, mapdispatchtoprops)(Toolsbar);

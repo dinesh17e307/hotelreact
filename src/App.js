@@ -41,14 +41,14 @@ class App extends React.Component {
     this.setState({
       customername: response.profileObj.name,
     });
-    this.props.history.push("/hotel");
+    // this.props.history.push("/hotel");
   };
   islog = () => {
     this.setState({
       islog: true,
     });
     this.props.onLogin();
-    this.props.history.push("/hotel");
+    // this.props.history.push("/hotel");
   };
   render() {
     let islog = this.state.islog;

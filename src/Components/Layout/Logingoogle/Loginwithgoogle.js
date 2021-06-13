@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom";
 function Logingoog(props) {
   const googleresponse = (response) => {
     console.log(response.profileObj);
-    props.history.push("/hotel");
   };
   return (
     <div>
